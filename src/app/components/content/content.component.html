@@ -2,18 +2,29 @@
   *ngIf="drawer$ | async as drawer"
   class="menu-btn"
   (click)="drawer.toggle()"
-  mat-icon-button
-  color="basic"
+  mat-fab
+  extended
 >
   <mat-icon>menu</mat-icon>
+
+  <ng-container *ngIf="currentTheme$ | async as currentTheme; else menu">
+    {{ currentTheme.themeName }}
+  </ng-container>
+
+  <ng-template #menu> Menu </ng-template>
 </button>
 
-<ng-container *ngIf="currentTheme$ | async as theme">
+<ng-container *ngIf="currentTheme$ | async as theme; else logo">
   <div class="theme">
-    <div class="theme__header">{{ theme.themeName }}</div>
     <div class="theme__block" *ngFor="let block of theme.themeBlocks">
       <div class="theme__block-header">{{ block.themeBlockHeader }}</div>
       <div class="theme__block-content">{{ block.themeBlockContent }}</div>
     </div>
   </div>
 </ng-container>
+
+<ng-template #logo>
+  <div class="image-container">
+    <img src="./../../../assets/logo.png" />
+  </div>
+</ng-template>

@@ -1,7 +1,9 @@
 .menu-btn {
   position: absolute;
-  top: 0;
-  left: 0;
+  top: 0.5rem;
+  left: 0.5rem;
+  background: linear-gradient(90deg, #b9deed, #efefef);
+  color: black;
 }
 
 .theme {
@@ -12,5 +14,18 @@
 
   &__header {
     font-size: large;
+  }
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: linear-gradient(90deg, #b9deed, #efefef);
+
+  img {
+    max-width: 90%;
+    max-height: 100%;
   }
 }
