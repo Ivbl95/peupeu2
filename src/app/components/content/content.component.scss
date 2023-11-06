@@ -1,0 +1,16 @@
+.menu-btn {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.theme {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5rem;
+
+  &__header {
+    font-size: large;
+  }
+}

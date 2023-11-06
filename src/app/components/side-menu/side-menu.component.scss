@@ -1,0 +1,9 @@
+.theme-button {
+  display: flex;
+  flex-direction: column;
+}
+
+// Инкапсулировнный стиль
+::ng-deep mat-expansion-panel .mat-expansion-panel-body {
+  padding: 0;
+}

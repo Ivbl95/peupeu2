@@ -1,0 +1,48 @@
+{
+  "technologies": [
+    {
+      "technologyName": "Angular",
+      "themes": [
+        {
+          "technologyName": "Angular",
+          "themeName": "ChangeDetection",
+          "themeBlocks": [
+            {
+              "themeBlockHeader": "MarkForCheck",
+              "themeBlockContent": "Пометить компонент грязным для следующей итерации ChangeDetection"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "technologyName": "Javascript",
+      "themes": [
+        {
+          "technologyName": "Javascript",
+          "themeName": "Введение в JS",
+          "themeBlocks": [
+            {
+              "themeBlockHeader": "Первые шаги",
+              "themeBlockContent": "Встань и иди"
+            }
+          ]
+        },
+        {
+          "technologyName": "Javascript",
+          "themeName": "Promise",
+          "themeBlocks": [
+            {
+              "themeBlockHeader": "Promise.all()",
+              "themeBlockContent": "Описание как работает Promise.all()"
+            },
+            {
+              "themeBlockHeader": "Promise.race()",
+              "themeBlockContent": "Описание как работает Promise.race()"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
