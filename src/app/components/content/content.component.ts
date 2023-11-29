@@ -3,7 +3,6 @@ import { MatDrawer } from '@angular/material/sidenav';
 import { Observable } from 'rxjs';
 import { ContentService } from 'src/app/services/content.service';
 import { DrawerService } from 'src/app/services/drawer.service';
-import { Theme } from 'src/app/types/theme.type';
 
 @Component({
   selector: 'app-content',
@@ -12,10 +11,12 @@ import { Theme } from 'src/app/types/theme.type';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class ContentComponent {
+  public readonly contentParts: any = this.contentService.contentParts;
+  public readonly contentGeneral: any = this.contentService.contentGeneral;
   public readonly drawer$: Observable<MatDrawer | null> =
     this.drawerService.drawer$;
 
-  public readonly currentTheme$: Observable<Theme | null> =
+  public readonly currentTheme$: Observable<string | null> =
     this.contentService.currentTheme$;
   constructor(
     private readonly contentService: ContentService,

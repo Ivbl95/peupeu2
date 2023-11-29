@@ -1,26 +1,25 @@
 import { Injectable } from '@angular/core';
-import { BehaviorSubject, map, Observable, of } from 'rxjs';
-import { Content } from '../types/content.type';
-import { Theme } from '../types/theme.type';
-import contentJson from './../themes/content.json';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { contentGeneral } from '../content/content-general';
+import { contentParts } from '../content/content-parts';
 
 @Injectable({
   providedIn: 'root',
 })
 export class ContentService {
-  public readonly content$: Observable<Content> = of(contentJson);
+  public readonly contentParts: any = contentParts;
+  public readonly contentGeneral: any = contentGeneral;
+  public readonly technologies: string[] = Object.keys(contentGeneral);
 
-  public readonly technologiesList$: Observable<string[]> = this.content$.pipe(
-    map((content: Content) => Object.keys(content.technologies))
-  );
+  private readonly currentThemeSubject$: BehaviorSubject<string | null> =
+    new BehaviorSubject<string | null>(null);
 
-  private readonly currentThemeSubject$: BehaviorSubject<Theme | null> =
-    new BehaviorSubject<Theme | null>(null);
-
-  public readonly currentTheme$: Observable<Theme | null> =
+  public readonly currentTheme$: Observable<string | null> =
     this.currentThemeSubject$.asObservable();
 
-  public setCurrentTheme(theme: Theme): void {
+  public setCurrentTheme(theme: string): void {
     this.currentThemeSubject$.next(theme);
   }
+
+  constructor() {}
 }

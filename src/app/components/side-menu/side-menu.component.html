@@ -1,15 +1,15 @@
-<mat-accordion *ngIf="content$ | async as content">
-  <mat-expansion-panel *ngFor="let technology of content.technologies">
+<mat-accordion *ngIf="contentGeneral as content">
+  <mat-expansion-panel *ngFor="let technology of content | keyvalue">
     <mat-expansion-panel-header>
-      <mat-panel-title>{{ technology.technologyName }} </mat-panel-title>
+      <mat-panel-title>{{ technology.key }} </mat-panel-title>
     </mat-expansion-panel-header>
     <div class="theme-button">
       <button
         mat-raised-button
-        *ngFor="let theme of technology.themes"
+        *ngFor="let theme of $any(technology.value)"
         (click)="clickButton(theme)"
       >
-        {{ theme.themeName }}
+        {{ theme }}
       </button>
     </div>
   </mat-expansion-panel>
