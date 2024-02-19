@@ -8,14 +8,17 @@
   <mat-icon>menu</mat-icon>
 
   <ng-container *ngIf="currentTheme$ | async as currentTheme; else menu">
-    {{ currentTheme }}
+    {{ currentTheme.name }}
   </ng-container>
 
   <ng-template #menu> Menu </ng-template>
 </button>
 
 <ng-container *ngIf="currentTheme$ | async as currentTheme; else logo">
-  <div class="theme" [innerHTML]="contentParts[currentTheme]"></div>
+  <ng-container *ngFor="let subTheme of currentTheme.subThemes">
+    <div>{{ subTheme.description }}</div>
+    <div [innerHTML]="subTheme.content"></div>
+  </ng-container>
 </ng-container>
 
 <ng-template #logo>
