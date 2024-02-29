@@ -10,15 +10,21 @@ import { MatListModule } from '@angular/material/list';
 import { MatMenuModule } from '@angular/material/menu';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ContentComponent } from './components/content/content.component';
 import { SideMenuComponent } from './components/side-menu/side-menu.component';
 import { MainPageComponent } from './pages/main-page/main-page.component';
-import { ContentComponent } from './components/content/content.component';
 
 @NgModule({
-  declarations: [AppComponent, MainPageComponent, SideMenuComponent, ContentComponent],
+  declarations: [
+    AppComponent,
+    MainPageComponent,
+    SideMenuComponent,
+    ContentComponent,
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -32,8 +38,8 @@ import { ContentComponent } from './components/content/content.component';
     MatListModule,
     MatExpansionModule,
     HttpClientModule,
+    MatToolbarModule,
   ],
-  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}

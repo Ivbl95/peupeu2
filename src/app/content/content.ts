@@ -1,6 +1,6 @@
-import { contentNamespace } from './content.interface';
+import { ContentNamespace } from './content.interface';
 
-const javascriptLet: contentNamespace.subTheme = {
+const javascriptLet: ContentNamespace.SubTheme = {
   description: 'Переменная объявляется так',
   type: 'code',
   content: `
@@ -13,14 +13,14 @@ class MyComponent {
 `,
 };
 
-const javascriptVariables: contentNamespace.theme = {
+const javascriptVariables: ContentNamespace.Theme = {
   name: 'Javascript Переменные',
   subThemes: [javascriptLet],
 };
 
-const javascript: contentNamespace.technology = {
+const javascript: ContentNamespace.Technology = {
   name: 'Javascript',
   themes: [javascriptVariables],
 };
 
-export const content: contentNamespace.technology[] = [javascript];
+export const content: ContentNamespace.Technology[] = [javascript];

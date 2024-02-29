@@ -1,20 +1,33 @@
-.menu-btn {
-  position: absolute;
-  top: 0.5rem;
-  left: 0.5rem;
-  background: linear-gradient(90deg, #b9deed, #efefef);
-  color: black;
+:host {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
 }
 
-.image-container {
+img {
+  max-width: 90%;
+}
+
+.container-image {
   display: flex;
   justify-content: center;
   align-items: center;
-  height: 100%;
-  background: linear-gradient(90deg, #b9deed, #efefef);
+  height: inherit;
+}
 
-  img {
-    max-width: 90%;
-    max-height: 100%;
+.container-content {
+  height: inherit;
+  padding: 0 5rem;
+  background: hsl(0, 0%, 98%);
+
+  &__content {
+    height: inherit;
+    background: #fff;
+    padding: 2rem;
   }
+}
+
+mat-toolbar {
+  background: #7ba6de;
+  color: #fff;
 }

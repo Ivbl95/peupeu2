@@ -8,7 +8,7 @@
       <button
         mat-raised-button
         *ngFor="let theme of technology.themes"
-        (click)="clickButton(theme)"
+        (click)="setCurrentTheme(theme)"
       >
         {{ theme.name }}
       </button>

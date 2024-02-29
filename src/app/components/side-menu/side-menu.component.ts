@@ -1,5 +1,5 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { contentNamespace } from 'src/app/content/content.interface';
+import { ContentNamespace } from 'src/app/content/content.interface';
 import { ContentService } from 'src/app/services/content.service';
 import { DrawerService } from 'src/app/services/drawer.service';
 
@@ -10,7 +10,7 @@ import { DrawerService } from 'src/app/services/drawer.service';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class SideMenuComponent {
-  public readonly content: contentNamespace.technology[] =
+  public readonly content: ContentNamespace.Technology[] =
     this.contentService.content;
 
   constructor(
@@ -18,7 +18,7 @@ export class SideMenuComponent {
     private readonly drawerService: DrawerService
   ) {}
 
-  public clickButton(theme: contentNamespace.theme): void {
+  public setCurrentTheme(theme: ContentNamespace.Theme): void {
     this.contentService.setCurrentTheme(theme);
     this.drawerService.closeDrawer();
   }

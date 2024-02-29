@@ -1,15 +1,15 @@
-export namespace contentNamespace {
-  export interface technology {
+export namespace ContentNamespace {
+  export interface Technology {
     name: string;
-    themes: theme[];
+    themes: Theme[];
   }
 
-  export interface theme {
+  export interface Theme {
     name: string;
-    subThemes: subTheme[];
+    subThemes: SubTheme[];
   }
 
-  export interface subTheme {
+  export interface SubTheme {
     description: string;
     type: 'text' | 'code';
     content: string;
