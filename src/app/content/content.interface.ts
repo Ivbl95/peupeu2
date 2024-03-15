@@ -11,7 +11,6 @@ export namespace ContentNamespace {
 
   export interface SubTheme {
     description: string;
-    type: 'text' | 'code';
     content: string;
   }
 }
