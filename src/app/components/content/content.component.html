@@ -12,7 +12,11 @@
   <div class="content">
     <div class="content__wrapper" *ngFor="let subTheme of theme.subThemes">
       <h2 class="content__header">{{ subTheme.description }}</h2>
-      <div class="content__code" [innerHTML]="subTheme.content"></div>
+      <pre>
+        <code>
+          <div class="content__code" [innerText]="subTheme.content"></div>
+        </code>
+      </pre>
     </div>
   </div>
 </div>

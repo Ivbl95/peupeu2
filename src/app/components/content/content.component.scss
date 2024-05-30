@@ -24,7 +24,6 @@ img {
 .content {
   display: flex;
   flex-direction: column;
-  gap: 2rem;
   background: #fff;
   padding: 2%;
 
@@ -34,7 +33,6 @@ img {
 
   &__code {
     overflow: scroll;
-    margin-top: 1rem;
     border: 0.1px solid #7ba6de;
     border-radius: 1rem;
     padding: 1rem;
@@ -46,4 +44,10 @@ mat-toolbar {
   color: #fff;
   height: 50px;
   min-height: 50px;
+}
+
+pre,
+code {
+  margin: 0;
+  padding: 0;
 }
